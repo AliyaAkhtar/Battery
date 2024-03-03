@@ -1,0 +1,19 @@
+/* SplashAnimationStyles.css */
+
+.splash-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #252134;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .splash-animation {
+    width: auto;
+    height: auto;
+  }
+  

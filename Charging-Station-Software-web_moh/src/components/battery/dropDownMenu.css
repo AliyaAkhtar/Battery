@@ -1,0 +1,72 @@
+/* DropdownMenu.css */
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  width: 200px;
+  font-family: Arial, sans-serif;
+}
+
+.dropdown-header {
+  padding: 8px 16px;
+  background-color: #6d6262;
+  font-weight: bold;
+}
+
+.dropdown-item {
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.dropdown-item:hover {
+  background-color: #f5f5f5;
+}
+
+.dropdown-item-feedback {
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  color: #333;
+}
+
+.dropdown-item-feedback:hover {
+  background-color: #f5f5f5;
+}
+
+.icon-container {
+  flex: 0 0 24px;
+  margin-right: 10px;
+  color: #333;
+}
+
+.feedback-icon {
+  flex: 0 0 24px;
+  margin-right: 10px;
+  color: #333;
+}
+
+.dropdown-item1 {
+  flex: 1;
+  color: #333;
+}
+
+.label-container {
+  flex: 1;
+  color: #333;
+}
+
+.dropdown-divider {
+  margin: 6px 0;
+  border-top: 1px solid #ccc;
+}
+
+/* Add more custom styling as needed */

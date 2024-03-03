@@ -1,0 +1,368 @@
+.battery {
+  width: 250px;
+  border: 8px solid #7c7979;
+  padding: 10px;
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 30px;
+  position: relative;
+  margin-bottom: 30px;
+  border-radius: 10px; /* Rounded corners for the battery */
+  background-color: #252134;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+}
+
+.battery-bar {
+  position: relative;
+  width: 98%;
+  height: 80px;
+  background-color: #f9f9f9;
+  border: 1px solid #fffafa;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  border-radius: 15px;
+}
+.battery-box {
+  position: absolute;
+  top: 52%;
+  right: 5px;
+  transform: translate(0, -50%);
+  width: 5px;
+  height: 30px;
+  background-color: #ffffff;
+  border-radius: 20px;
+}
+
+.battery-percentage {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 14px;
+  color: #000000;
+  font-weight: bold;
+}
+
+.battery-fill {
+  height: 100%;
+  transition: width 1s ease-in-out, background-color 0.3s ease-in-out;
+  border-radius: 5px;
+  position: relative;
+}
+
+.battery-status-box {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 5px;
+  border-top-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  font-size: 12px;
+  display: none;
+}
+
+.battery-bar:hover .battery-status-box {
+  display: block;
+}
+
+.controls {
+  margin-top: 10px;
+  text-align: center;
+}
+
+button {
+  margin: 5px;
+  padding: 8px 15px;
+  border: none;
+  background-color: #7c7979;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.icon-button {
+  font-size: 16px;
+  padding: 1px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-top: 2px;
+  /* Add any other styles you need */
+}
+
+button:hover {
+  background-color: #5d5a5a;
+}
+
+.battery-info {
+  text-align: center;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.battery-fill::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: linear-gradient(to right, #57cc57, #f9f9f9);
+  transition: width 0.5s ease-in-out;
+}
+.bulb {
+  width: 12px; /* Adjust the width and height to your desired size */
+  height: 12px;
+  background-color: transparent;
+  border-radius: 50%; /* Make it a circle by setting border-radius to 50% */
+  position: absolute; /* Position the circle absolutely */
+  margin-top: 10px;
+  margin-right: 10px;
+  top: 0;
+  right: 0;
+}
+
+.bulb-inner {
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  border-radius: 100%;
+  animation: colorChange 1s infinite alternate;
+}
+
+.bulb-glow {
+  box-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00;
+  animation: glow 0.5s infinite alternate, colorChange 1s infinite;
+}
+
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00;
+  }
+  100% {
+    box-shadow: 0 0 15px #00ff00, 0 0 25px #00ff00, 0 0 35px #00ff00;
+  }
+}
+
+@keyframes colorChange {
+  0%,
+  100% {
+    background-color: #00ff00;
+  }
+  50% {
+    background-color: #fff;
+  }
+}
+
+/* YourComponent.css */
+.beautiful-amount {
+  text-align: right;
+  margin-left: 50px;
+  padding: 10px;
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  border-radius: 0;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center; /* Center content vertically */
+  justify-content: space-between; /* Add space between label and amount */
+  width: 200px; /* Adjust the width as needed */
+}
+
+.amount-label {
+  font-size: 18px;
+  color: #000000;
+  margin-left: 20px;
+}
+
+.formatted-amount {
+  font-size: 22px;
+  color: #53595e;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  margin-right: 20px;
+}
+
+.battery .battery-info .not-working {
+  height: 154px;
+  width: 220px;
+  margin-left: 20px;
+}
+.battery .battery-info .empty {
+  height: 154px;
+  width: 220px;
+  margin-left: 20px;
+}
+.buttonNext {
+  margin-left: 20px;
+}
+
+@media screen and (max-height: 900px) {
+  .battery {
+    width: 200px;
+    height: 140px;
+    border: 4px solid #7c7979;
+    padding: 10px;
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 30px;
+    position: relative;
+    margin-bottom: 4px;
+    border-radius: 10px; /* Rounded corners for the battery */
+    background-color: #252134;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+  }
+
+  .battery-bar {
+    position: relative;
+    width: 98%;
+    height: 70px;
+    background-color: #f9f9f9;
+    border: 1px solid #fffafa;
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+    border-radius: 15px;
+  }
+  .battery-box {
+    position: absolute;
+    top: 57%;
+    right: 4px;
+    transform: translate(0, -50%);
+    width: 5px;
+    height: 30px;
+    background-color: #ffffff;
+    border-radius: 20px;
+  }
+
+  .battery-percentage {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 14px;
+    color: #000000;
+    font-weight: bold;
+  }
+
+  .battery-fill {
+    height: 100%;
+    transition: width 1s ease-in-out, background-color 0.3s ease-in-out;
+    border-radius: 5px;
+    position: relative;
+  }
+
+  .battery-bar:hover .battery-status-box {
+    display: block;
+  }
+
+  .controls {
+    margin-top: 0px;
+    text-align: center;
+  }
+  .controls .proceed .step-1 {
+    margin: 5px;
+    font-size: 11px;
+  }
+  button {
+    margin: 2px;
+    padding: 4px 8px;
+    border: none;
+    background-color: #7c7979;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+
+  .icon-button {
+    font-size: 16px;
+    padding: 1px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-top: 2px;
+    /* Add any other styles you need */
+  }
+
+  button:hover {
+    background-color: #5d5a5a;
+  }
+
+  .battery-info {
+    text-align: center;
+    margin-bottom: 1px;
+    font-weight: bold;
+    font-size: 12px;
+  }
+
+  .battery-fill::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: linear-gradient(to right, #57cc57, #f9f9f9);
+    transition: width 0.5s ease-in-out;
+  }
+  .bulb {
+    width: 10px; /* Adjust the width and height to your desired size */
+    height: 10px;
+    background-color: transparent;
+    border-radius: 50%; /* Make it a circle by setting border-radius to 50% */
+    position: absolute; /* Position the circle absolutely */
+    margin-top: 10px;
+    margin-right: 10px;
+    top: 0;
+    right: 0;
+  }
+
+  .bulb-inner {
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    border-radius: 100%;
+    animation: colorChange 1s infinite alternate;
+  }
+
+  .bulb-glow {
+    box-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00;
+    animation: glow 0.5s infinite alternate, colorChange 1s infinite;
+  }
+
+  @keyframes glow {
+    0% {
+      box-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00;
+    }
+    100% {
+      box-shadow: 0 0 15px #00ff00, 0 0 25px #00ff00, 0 0 35px #00ff00;
+    }
+  }
+
+  @keyframes colorChange {
+    0%,
+    100% {
+      background-color: #00ff00;
+    }
+    50% {
+      background-color: #fff;
+    }
+  }
+  .battery .battery-info .not-working {
+    height: 90%;
+    width: 90%;
+    margin-top: -12%;
+    margin-left: 10px;
+  }
+  .battery .battery-info .empty {
+    height: 90%;
+    width: 90%;
+    margin-top: 0%;
+    margin-left: 10px;
+  }
+}

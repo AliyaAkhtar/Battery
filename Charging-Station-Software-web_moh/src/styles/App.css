@@ -1,0 +1,336 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.Battery {
+  background: linear-gradient(-45deg, #4c4c4c, #47444a, #000000, #3a4846, #20060f);
+  background-size: 400% 400%;
+  animation: gradientAnimation 15s infinite;
+  font-family: Arial, sans-serif;
+  color: #fff;
+  position: relative;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  overflow: hidden; 
+}
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+.urduText {
+  font-family: 'Noto Nastaliq Urdu', cursive;
+}
+
+
+.navbar {
+  background-color: #252134;
+
+  color: #fff;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  padding: 15px 0;
+
+  animation: navbarAnimation 4s infinite alternate;
+}
+
+/* @keyframes navbarAnimation {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+} */
+
+.navbar-title {
+  font-size: 24px;
+  margin: 0;
+  font-family: sans-serif; /* Add your preferred stylish font */
+  letter-spacing: 12px; /* Adjust letter spacing */
+  text-transform: uppercase; /* Convert to uppercase */
+  color: #fff;
+  text-shadow: 0 2px 4px rgba(255, 253, 253, 0.2);
+  animation: shiningTextAnimation 3s infinite;/*Apply animation*/
+}
+
+@keyframes shiningTextAnimation {
+  0% {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  50% {
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  }
+  100% {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+}
+.container {
+  margin-right: -45px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 60px); /* Subtract navbar height from viewport height */
+  overflow-y: auto; /* Add scrolling for overflow content */
+  padding-top: 60px;
+  margin-bottom: 50px; /* Add margin at the bottom to separate from the last row */
+
+}
+
+
+.app-title {
+  text-align: center;
+  font-size: 0;
+  opacity: 0;
+  position: relative;
+  animation: titleAnimation 2s ease-in-out forwards, titleColorAnimation 6s infinite alternate;
+}
+
+@keyframes titleAnimation {
+  0% {
+    font-size: 0;
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+  100% {
+    font-size: 36px;
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes titleColorAnimation {
+  0% {
+    color: #fff;
+    text-shadow: none;
+  }
+  50% {
+    color: #0b7e8d;
+    text-shadow: 0 0 5px rgba(233, 30, 30, 0.8);
+  }
+  100% {
+    color: #211338;
+    text-shadow: 0 0 10px rgba(71, 50, 105, 0.8);
+  }
+}
+
+.battery-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 30px;
+  margin-bottom: 20px; /* Adjust the margin at the bottom */
+}
+
+
+/* Add animation for letters */
+.letters {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 48px;
+  animation: lettersAnimation 10s ease-in-out infinite;
+  opacity: 0;
+}
+
+@keyframes lettersAnimation {
+  0% {
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+  }
+  25% {
+    transform: translate(-50%, -50%) scale(1.2);
+    opacity: 1;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+  75% {
+    transform: translate(-50%, -50%) scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0;
+  }
+}
+@media screen and (max-height: 900px) {
+  body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  
+}
+
+
+
+.Battery {
+  background: linear-gradient(-45deg, #4c4c4c, #47444a, #000000, #3a4846, #20060f);
+  background-size: 400% 400%;
+  animation: gradientAnimation 15s infinite;
+  font-family: Arial, sans-serif;
+  color: #fff;
+  position: relative;
+  text-align: center;
+  padding: 0;
+  margin: 0; 
+}
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
+
+.navbar {
+  background-color: #252134;
+  color: #fff;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  padding: 8px 0;
+
+  animation: navbarAnimation 4s infinite alternate;
+}
+
+.navbar-title {
+  font-size: 24px;
+  margin: 0;
+  font-family: sans-serif; /* Add your preferred stylish font */
+  letter-spacing: 12px; /* Adjust letter spacing */
+  text-transform: uppercase; /* Convert to uppercase */
+  color: #fff;
+  text-shadow: 0 2px 4px rgba(255, 253, 253, 0.2);
+  animation: shiningTextAnimation 3s infinite;/*Apply animation*/
+}
+
+@keyframes shiningTextAnimation {
+  0% {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  50% {
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  }
+  100% {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+}
+.container {
+  margin-right: -45px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 60px); /* Subtract navbar height from viewport height */
+  overflow-y: auto; /* Add scrolling for overflow content */
+  padding-top: 60px;
+  margin-bottom: 0px; /* Add margin at the bottom to separate from the last row */
+
+}
+
+
+.app-title {
+  text-align: center;
+  font-size: 0;
+  opacity: 0;
+  position: relative;
+  animation: titleAnimation 2s ease-in-out forwards, titleColorAnimation 6s infinite alternate;
+}
+
+@keyframes titleAnimation {
+  0% {
+    font-size: 0;
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+  100% {
+    font-size: 36px;
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes titleColorAnimation {
+  0% {
+    color: #fff;
+    text-shadow: none;
+  }
+  50% {
+    color: #0b7e8d;
+    text-shadow: 0 0 5px rgba(233, 30, 30, 0.8);
+  }
+  100% {
+    color: #211338;
+    text-shadow: 0 0 10px rgba(71, 50, 105, 0.8);
+  }
+}
+
+.battery-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 30px;
+  margin-bottom: 20px; /* Adjust the margin at the bottom */
+}
+
+
+/* Add animation for letters */
+.letters {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 48px;
+  animation: lettersAnimation 10s ease-in-out infinite;
+  opacity: 0;
+}
+
+@keyframes lettersAnimation {
+  0% {
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+  }
+  25% {
+    transform: translate(-50%, -50%) scale(1.2);
+    opacity: 1;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+  75% {
+    transform: translate(-50%, -50%) scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0;
+  }
+}
+.urduText {
+  font-family: 'Noto Nastaliq Urdu', cursive;
+}
+}

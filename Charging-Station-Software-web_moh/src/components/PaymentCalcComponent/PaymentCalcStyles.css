@@ -1,0 +1,54 @@
+.paymentUI{
+  border: "none";
+  height: 50vh;
+}
+.slider-container {
+  position: relative;
+
+}
+.paymentUI .slider-container .fade-message {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.8); /* Light background color with transparency */
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.fade-message.hide {
+  opacity: 0;
+}
+@media screen and (max-height: 900px) {
+.paymentUI{
+  border: "none";
+  height: 60vh;
+  /* width: 10px; */
+}
+.slider-container {
+  position: relative;
+
+}
+.paymentUI .slider-container .fade-message {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.8); /* Light background color with transparency */
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.fade-message.hide {
+  opacity: 0;
+}
+
+}

@@ -1,0 +1,280 @@
+.bg-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(
+    -45deg,
+    #4c4c4c,
+    #47444a,
+    #000000,
+    #3a4846,
+    #20060f
+  );
+  background-size: 400% 400%;
+  animation: gradientAnimation 15s infinite;
+  font-family: Arial, sans-serif;
+  color: #000000;
+  position: relative;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  height: 100vh;
+}
+
+.myComplaint {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: white;
+  margin-left: 50%;
+  transform: translateX(0%);
+  white-space: nowrap;
+  background-color: red;
+  width: 200px;
+  height: 40px;
+  animation: colorChangeComplaint 2s infinite alternate; /* Animation for color change */
+}
+
+@keyframes colorChangeComplaint {
+  from {
+    background-color: red;
+  }
+  to {
+    background-color: silver;
+  }
+}
+.left-align-form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.left-align-label {
+  display: block;
+  margin-right: 10px;
+}
+
+.myFeedback {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: white;
+  margin-left: 50%;
+  transform: translateX(0%);
+  white-space: nowrap;
+  background-color: rgb(178, 237, 0);
+  width: 200px;
+  height: 40px;
+  animation: colorChangeFeedback 2s infinite alternate; /* Animation for color change */
+}
+
+@keyframes colorChangeFeedback {
+  from {
+    background-color: rgb(178, 237, 0);
+  }
+  to {
+    background-color: silver;
+  }
+}
+.sub-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.emojis-container {
+  /* display: flex; */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(255, 250, 250);
+}
+
+.emoji-container {
+  /* margin-top: "-10px"; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(255, 250, 250);
+  border-radius: 7px;
+  border-width: 0px;
+  padding: 30px;
+}
+
+.list-container {
+  list-style-type: none;
+}
+
+.tq-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  border-radius: 7px;
+  border-width: 0px;
+  padding: 35px;
+}
+
+.button {
+  background-color: transparent;
+  border-width: 0px;
+}
+
+.button:hover {
+  background-color: rgb(176, 182, 182);
+  border-radius: 10 px;
+  border-width: -0px;
+}
+
+.img {
+  height: 103px;
+  width: 100px;
+}
+@media screen and (max-height: 900px) {
+  .bg-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(
+      -45deg,
+      #4c4c4c,
+      #47444a,
+      #000000,
+      #3a4846,
+      #20060f
+    );
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s infinite;
+    font-family: Arial, sans-serif;
+    color: #000000;
+    position: relative;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    height: 100vh;
+  }
+
+  .myComplaint {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: white;
+    margin-left: 50%;
+    transform: translateX(0%);
+    white-space: nowrap;
+    background-color: red;
+    width: 200px;
+    height: 40px;
+    animation: colorChangeComplaint 2s infinite alternate; /* Animation for color change */
+  }
+
+  @keyframes colorChangeComplaint {
+    from {
+      background-color: red;
+    }
+    to {
+      background-color: silver;
+    }
+  }
+  .left-align-form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .left-align-label {
+    display: block;
+    margin-right: 10px;
+  }
+
+  .myFeedback {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: white;
+    margin-left: 50%;
+    transform: translateX(0%);
+    white-space: nowrap;
+    background-color: rgb(178, 237, 0);
+    width: 200px;
+    height: 40px;
+    animation: colorChangeFeedback 2s infinite alternate; /* Animation for color change */
+  }
+
+  @keyframes colorChangeFeedback {
+    from {
+      background-color: rgb(178, 237, 0);
+    }
+    to {
+      background-color: silver;
+    }
+  }
+  .sub-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .emojis-container {
+    /* display: flex; */
+    margin-top: 0;
+    height: 70%;
+    /* width: 10px; */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(255, 250, 250);
+  }
+
+  .emoji-container {
+    /* margin-top: "-10px"; */
+    height: 12%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(255, 250, 250);
+    border-radius: 7px;
+    border-width: 0px;
+    padding: 12px;
+  }
+
+  
+  .list-container {
+    list-style-type: none;
+  }
+
+  .tq-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    border-radius: 7px;
+    border-width: 0px;
+    padding: 35px;
+  }
+
+  .button {
+    background-color: transparent;
+    border-width: 0px;
+  }
+
+  .button:hover {
+    background-color: rgb(176, 182, 182);
+    border-radius: 10 px;
+    border-width: -0px;
+  }
+
+  .img {
+    height: 70px;
+    width: 90px;
+  }
+}

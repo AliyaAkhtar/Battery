@@ -1,0 +1,14 @@
+.successUI{
+  border: "none";
+  height: 50vh;
+}
+
+@media screen and (max-height: 900px) {
+.successUI{
+  border: "none";
+  height: 60vh;
+
+}
+
+
+}

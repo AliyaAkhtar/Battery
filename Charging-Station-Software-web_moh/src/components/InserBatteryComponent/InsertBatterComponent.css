@@ -1,0 +1,14 @@
+.batteryUI{
+    border: "none";
+    height: 50vh;
+}
+
+@media screen and (max-height: 900px) {
+.batteryUI{
+    border: "none";
+    height: 60vh;
+    /* width: 10px; */
+}
+
+
+  }

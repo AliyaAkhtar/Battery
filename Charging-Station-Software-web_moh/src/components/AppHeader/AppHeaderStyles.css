@@ -1,0 +1,13 @@
+/* AppHeaderStyles.css */
+
+.appBar {
+  background-color: white;
+  color: black;
+  align-items: center;
+}
+
+.logo {
+  width: auto;
+  height: 40px;
+  margin-right: 10px; /* You can use specific values here instead of theme.spacing(2) */
+}
