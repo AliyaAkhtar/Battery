@@ -57,75 +57,143 @@ function Battery({ id }) {
       console.error("Error sending log entry to server:", error);
     }
   };
+
+  // useEffect(() => {
+  //   const fetchInitialBatteryData = async () => {
+  //     // Fetch initial battery presence data
+  //     const storedBatteryPresent = localStorage.getItem("batteryPresent");
+  //     if (storedBatteryPresent) {
+  //       const batteryPresentObject = JSON.parse(storedBatteryPresent);
+  //       setInitialBatteryPresent(batteryPresentObject[id].batteryPresent);
+  //     }
+  //   };
+  //   // Fetch initial data when the component mounts
+  //   fetchInitialBatteryData();
+  //   // Continuous monitoring using setInterval
+  //   const intervalId = setInterval(() => {
+  //     const storedBatteryPresent = localStorage.getItem("batteryPresent");
+  //     if (storedBatteryPresent) {
+  //       const batteryPresentObject = JSON.parse(storedBatteryPresent);
+  //       const currentBatteryPresent = batteryPresentObject[id].batteryPresent;
+
+  //       // Use the functional form of setInitialBatteryPresent to get the most recent state
+  //       setInitialBatteryPresent((prevInitialBatteryPresent) => {
+  //         // Compare with initial data and take action if a change is detected
+  //         const tokenCheck = localStorage.getItem("access_token");
+  //         if (
+  //           currentBatteryPresent !== prevInitialBatteryPresent &&
+  //           !tokenCheck
+  //         ) {
+  //           const timestamp = Date.now();
+  //           const currentDate = new Date(timestamp);
+
+  //           // Format the date as a string
+  //           const readableDate = currentDate.toLocaleString();
+
+  //           // Log slot information to the console
+  //           if (currentBatteryPresent) {
+  //             const logMessage = `Battery inserted in slot ${id} at ${readableDate}`;
+  //             console.log(logMessage);
+  //             // swal("Warning", logMessage, "error");
+  //             alert.show(logMessage);
+  //             audio.play();
+  //             // Accumulate log data
+  //             const logEntry = {
+  //               timestamp: timestamp,
+  //               message: logMessage,
+  //             };
+  //             sendLogDataToServer(logEntry);
+  //           } else {
+  //             const logMessage = `Battery removed from slot ${id} at ${readableDate}`;
+  //             console.log(logMessage);
+  //             alert.show(logMessage);
+  //             audio.play();
+             
+  //             // Accumulate log data
+  //             const logEntry = {
+  //               timestamp: timestamp,
+  //               message: logMessage,
+  //             };
+  //             sendLogDataToServer(logEntry);
+  //           }
+  //         }
+
+  //         // Return the currentBatteryPresent value for the next iteration
+  //         return currentBatteryPresent;
+  //       });
+  //     }
+  //   }, 5000); // Adjust the interval as needed (e.g., every 5 seconds)
+
+  //   // Clear the interval when the component unmounts
+  //   return () => clearInterval(intervalId);
+  // }, [id, initialBatteryPresent]);
+  
+  const prevBatteryPresentRef = useRef({});
   useEffect(() => {
     const fetchInitialBatteryData = async () => {
-      // Fetch initial battery presence data
-      const storedBatteryPresent = localStorage.getItem("batteryPresent");
-      if (storedBatteryPresent) {
-        const batteryPresentObject = JSON.parse(storedBatteryPresent);
-        setInitialBatteryPresent(batteryPresentObject[id].batteryPresent);
-      }
+        // Fetch initial battery presence data
+        const storedBatteryPresent = localStorage.getItem("batteryPresent");
+        if (storedBatteryPresent) {
+            const batteryPresentObject = JSON.parse(storedBatteryPresent);
+            setInitialBatteryPresent(batteryPresentObject[id].batteryPresent);
+            // Store the initial battery present data in the ref
+            prevBatteryPresentRef.current = { ...batteryPresentObject };
+        }
     };
+
     // Fetch initial data when the component mounts
     fetchInitialBatteryData();
-    // Continuous monitoring using setInterval
+
     const intervalId = setInterval(() => {
-      const storedBatteryPresent = localStorage.getItem("batteryPresent");
-      if (storedBatteryPresent) {
-        const batteryPresentObject = JSON.parse(storedBatteryPresent);
-        const currentBatteryPresent = batteryPresentObject[id].batteryPresent;
+        const storedBatteryPresent = localStorage.getItem("batteryPresent");
+        if (storedBatteryPresent) {
+            const batteryPresentObject = JSON.parse(storedBatteryPresent);
+            let changesDetected = false;
 
-        // Use the functional form of setInitialBatteryPresent to get the most recent state
-        setInitialBatteryPresent((prevInitialBatteryPresent) => {
-          // Compare with initial data and take action if a change is detected
-          const tokenCheck = localStorage.getItem("access_token");
-          if (
-            currentBatteryPresent !== prevInitialBatteryPresent &&
-            !tokenCheck
-          ) {
-            const timestamp = Date.now();
-            const currentDate = new Date(timestamp);
+            const currentBatteryPresent = batteryPresentObject[id].batteryPresent;
+            const prevBatteryPresent = prevBatteryPresentRef.current[id]?.batteryPresent;
+                
+                if (currentBatteryPresent !== prevBatteryPresent) {
+                    const timestamp = Date.now();
+                    const currentDate = new Date(timestamp);
+                    const readableDate = currentDate.toLocaleString();
 
-            // Format the date as a string
-            const readableDate = currentDate.toLocaleString();
-
-            // Log slot information to the console
-            if (currentBatteryPresent) {
-              const logMessage = `Battery inserted in slot ${id} at ${readableDate}`;
-              console.log(logMessage);
-              // swal("Warning", logMessage, "error");
-              alert.show(logMessage);
-              audio.play();
-              // Accumulate log data
-              const logEntry = {
-                timestamp: timestamp,
-                message: logMessage,
-              };
-              sendLogDataToServer(logEntry);
-            } else {
-              const logMessage = `Battery removed from slot ${id} at ${readableDate}`;
-              console.log(logMessage);
-              alert.show(logMessage);
-              audio.play();
-             
-              // Accumulate log data
-              const logEntry = {
-                timestamp: timestamp,
-                message: logMessage,
-              };
-              sendLogDataToServer(logEntry);
-            }
-          }
-
-          // Return the currentBatteryPresent value for the next iteration
-          return currentBatteryPresent;
-        });
+                    if (currentBatteryPresent) {
+                      const logMessage = `Battery inserted in slot ${id} at ${readableDate}`;
+                      console.log(logMessage);
+                      alert.show(logMessage);
+                      audio.play();
+                      // Accumulate log data
+                      const logEntry = {
+                        timestamp: timestamp,
+                        message: logMessage,
+                      };
+                      sendLogDataToServer(logEntry);
+                      
+                  } else {
+                      const logMessage = `Battery removed from slot ${id} at ${readableDate}`;
+                      console.log(logMessage);
+                      alert.show(logMessage);
+                      audio.play();
+                      // Accumulate log data
+                      const logEntry = {
+                        timestamp: timestamp,
+                        message: logMessage,
+                      };
+                      sendLogDataToServer(logEntry);
+                  }
+                  // Update the ref with the current battery present data
+                  prevBatteryPresentRef.current[id] = { batteryPresent: currentBatteryPresent };
+                  changesDetected = true;
+                  // console.log(prevBatteryPresentRef); 
+              }
+         
       }
-    }, 5000); // Adjust the interval as needed (e.g., every 5 seconds)
+  }, 5000); // Adjust the interval as needed (e.g., every 5 seconds)
 
-    // Clear the interval when the component unmounts
-    return () => clearInterval(intervalId);
-  }, [id, initialBatteryPresent]);
+  // Clear the interval when the component unmounts
+  return () => clearInterval(intervalId);
+}, [id, initialBatteryPresent]);
 
   const handleOpen = () => {
     const storedBatteryPresent = localStorage.getItem("batteryPresent");
@@ -160,6 +228,9 @@ function Battery({ id }) {
 
   const handleClose = () => {
     setOpen(false);
+    // const logMessage = `Battery already removed from slot ${id} at ${readableDate}`;
+    // console.log(logMessage);
+    // alert.show(logMessage);
   };
 
   const fetchBatteryData = async () => {

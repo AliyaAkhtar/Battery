@@ -5,6 +5,7 @@ const APi = {
   APi_4: "/checkAdmin",
   APi_5: "/customerfeedback",
   APi_6: "/customercomplaint",
+  APi_7: "/searchQRCode",
 };
 
 export default APi;

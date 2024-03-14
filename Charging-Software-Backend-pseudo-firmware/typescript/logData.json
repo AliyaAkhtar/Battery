@@ -134,5 +134,289 @@
   {
     "timestamp": 1709124640141,
     "message": "Battery removed from slot 8 at 2/28/2024, 5:50:40 PM"
+  },
+  {
+    "timestamp": 1709477282355,
+    "message": "Battery removed from slot 8 at 3/3/2024, 7:48:02 PM"
+  },
+  {
+    "timestamp": 1709483724899,
+    "message": "Battery removed from slot 8 at 3/3/2024, 9:35:24 PM"
+  },
+  {
+    "timestamp": 1709528649461,
+    "message": "Battery removed from slot 8 at 3/4/2024, 10:04:09 AM"
+  },
+  {
+    "timestamp": 1709532111449,
+    "message": "Battery removed from slot 8 at 3/4/2024, 11:01:51 AM"
+  },
+  {
+    "timestamp": 1709532425447,
+    "message": "Battery removed from slot 1 at 3/4/2024, 11:07:05 AM"
+  },
+  {
+    "timestamp": 1709532434569,
+    "message": "Battery removed from slot 2 at 3/4/2024, 11:07:14 AM"
+  },
+  {
+    "timestamp": 1709532444571,
+    "message": "Battery removed from slot 3 at 3/4/2024, 11:07:24 AM"
+  },
+  {
+    "timestamp": 1709565216460,
+    "message": "Battery inserted in slot 1 at 3/4/2024, 8:13:36 PM"
+  },
+  {
+    "timestamp": 1709565216923,
+    "message": "Battery inserted in slot 1 at 3/4/2024, 8:13:36 PM"
+  },
+  {
+    "timestamp": 1709565216943,
+    "message": "Battery inserted in slot 2 at 3/4/2024, 8:13:36 PM"
+  },
+  {
+    "timestamp": 1709565216946,
+    "message": "Battery inserted in slot 3 at 3/4/2024, 8:13:36 PM"
+  },
+  {
+    "timestamp": 1709568127049,
+    "message": "Battery removed from slot 1 at 3/4/2024, 9:02:07 PM"
+  },
+  {
+    "timestamp": 1709568252162,
+    "message": "Battery inserted in slot 1 at 3/4/2024, 9:04:12 PM"
+  },
+  {
+    "timestamp": 1709568302106,
+    "message": "Battery removed from slot 8 at 3/4/2024, 9:05:02 PM"
+  },
+  {
+    "timestamp": 1709570050273,
+    "message": "Battery inserted in slot 2 at 3/4/2024, 9:34:10 PM"
+  },
+  {
+    "timestamp": 1709570050392,
+    "message": "Battery inserted in slot 3 at 3/4/2024, 9:34:10 PM"
+  },
+  {
+    "timestamp": 1709570090425,
+    "message": "Battery removed from slot 3 at 3/4/2024, 9:34:50 PM"
+  },
+  {
+    "timestamp": 1709570120538,
+    "message": "Battery inserted in slot 3 at 3/4/2024, 9:35:20 PM"
+  },
+  {
+    "timestamp": 1709742680270,
+    "message": "Battery inserted in slot 8 at 3/6/2024, 9:31:20 PM"
+  },
+  {
+    "timestamp": 1709743204035,
+    "message": "Battery removed from slot 3 at 3/6/2024, 9:40:04 PM"
+  },
+  {
+    "timestamp": 1709743229106,
+    "message": "Battery inserted in slot 3 at 3/6/2024, 9:40:29 PM"
+  },
+  {
+    "timestamp": 1709744098468,
+    "message": "Battery removed from slot 8 at 3/6/2024, 9:54:58 PM"
+  },
+  {
+    "timestamp": 1709827622165,
+    "message": "Battery removed from slot 3 at 3/7/2024, 9:07:02 PM"
+  },
+  {
+    "timestamp": 1709827647129,
+    "message": "Battery removed from slot 4 at 3/7/2024, 9:07:27 PM"
+  },
+  {
+    "timestamp": 1709827662271,
+    "message": "Battery inserted in slot 4 at 3/7/2024, 9:07:42 PM"
+  },
+  {
+    "timestamp": 1709827662280,
+    "message": "Battery inserted in slot 4 at 3/7/2024, 9:07:42 PM"
+  },
+  {
+    "timestamp": 1709827662356,
+    "message": "Battery inserted in slot 3 at 3/7/2024, 9:07:42 PM"
+  },
+  {
+    "timestamp": 1709827796815,
+    "message": "Battery inserted in slot 4 at 3/7/2024, 9:09:56 PM"
+  },
+  {
+    "timestamp": 1709827796830,
+    "message": "Battery removed from slot 8 at 3/7/2024, 9:09:56 PM"
+  },
+  {
+    "timestamp": 1709974430123,
+    "message": "Battery removed from slot 8 at 3/9/2024, 1:53:50 PM"
+  },
+  {
+    "timestamp": 1709977998085,
+    "message": "Battery removed from slot 8 at 3/9/2024, 2:53:18 PM"
+  },
+  {
+    "timestamp": 1709978239247,
+    "message": "Battery removed from slot 8 at 3/9/2024, 2:57:19 PM"
+  },
+  {
+    "timestamp": 1709979257674,
+    "message": "Battery inserted in slot 1 at 3/9/2024, 3:14:17 PM"
+  },
+  {
+    "timestamp": 1709979257759,
+    "message": "Battery inserted in slot 2 at 3/9/2024, 3:14:17 PM"
+  },
+  {
+    "timestamp": 1709979257785,
+    "message": "Battery removed from slot 8 at 3/9/2024, 3:14:17 PM"
+  },
+  {
+    "timestamp": 1709980529365,
+    "message": "Battery inserted in slot 2 at 3/9/2024, 3:35:29 PM"
+  },
+  {
+    "timestamp": 1709980693686,
+    "message": "Battery inserted in slot 3 at 3/9/2024, 3:38:13 PM"
+  },
+  {
+    "timestamp": 1709980693717,
+    "message": "Battery removed from slot 8 at 3/9/2024, 3:38:13 PM"
+  },
+  {
+    "timestamp": 1710149235698,
+    "message": "Battery removed from slot 1 at 3/11/2024, 2:27:15 PM"
+  },
+  {
+    "timestamp": 1710149260698,
+    "message": "Battery removed from slot 2 at 3/11/2024, 2:27:40 PM"
+  },
+  {
+    "timestamp": 1710149285762,
+    "message": "Battery inserted in slot 2 at 3/11/2024, 2:28:05 PM"
+  },
+  {
+    "timestamp": 1710149285766,
+    "message": "Battery inserted in slot 1 at 3/11/2024, 2:28:05 PM"
+  },
+  {
+    "timestamp": 1710149325751,
+    "message": "Battery removed from slot 3 at 3/11/2024, 2:28:45 PM"
+  },
+  {
+    "timestamp": 1710149960797,
+    "message": "Battery removed from slot 1 at 3/11/2024, 2:39:20 PM"
+  },
+  {
+    "timestamp": 1710163489004,
+    "message": "Battery inserted in slot 2 at 3/11/2024, 6:24:49 PM"
+  },
+  {
+    "timestamp": 1710163667507,
+    "message": "Battery inserted in slot 8 at 3/11/2024, 6:27:47 PM"
+  },
+  {
+    "timestamp": 1710163697514,
+    "message": "Battery removed from slot 2 at 3/11/2024, 6:28:17 PM"
+  },
+  {
+    "timestamp": 1710163851278,
+    "message": "Battery inserted in slot 2 at 3/11/2024, 6:30:51 PM"
+  },
+  {
+    "timestamp": 1710163851298,
+    "message": "Battery removed from slot 8 at 3/11/2024, 6:30:51 PM"
+  },
+  {
+    "timestamp": 1710164046500,
+    "message": "Battery inserted in slot 8 at 3/11/2024, 6:34:06 PM"
+  },
+  {
+    "timestamp": 1710164071441,
+    "message": "Battery removed from slot 2 at 3/11/2024, 6:34:31 PM"
+  },
+  {
+    "timestamp": 1710164102102,
+    "message": "Battery inserted in slot 2 at 3/11/2024, 6:35:02 PM"
+  },
+  {
+    "timestamp": 1710164141524,
+    "message": "Battery removed from slot 8 at 3/11/2024, 6:35:41 PM"
+  },
+  {
+    "timestamp": 1710164191804,
+    "message": "Battery inserted in slot 8 at 3/11/2024, 6:36:31 PM"
+  },
+  {
+    "timestamp": 1710164231595,
+    "message": "Battery removed from slot 2 at 3/11/2024, 6:37:11 PM"
+  },
+  {
+    "timestamp": 1710238014729,
+    "message": "Battery inserted in slot 2 at 3/12/2024, 3:06:54 PM"
+  },
+  {
+    "timestamp": 1710240435878,
+    "message": "Battery removed from slot 1 at 3/12/2024, 3:47:15 PM"
+  },
+  {
+    "timestamp": 1710240725504,
+    "message": "Battery inserted in slot 1 at 3/12/2024, 3:52:05 PM"
+  },
+  {
+    "timestamp": 1710316691291,
+    "message": "Battery inserted in slot 1 at 3/13/2024, 12:58:11 PM"
+  },
+  {
+    "timestamp": 1710320886990,
+    "message": "Battery removed from slot 1 at 3/13/2024, 2:08:06 PM"
+  },
+  {
+    "timestamp": 1710321415579,
+    "message": "Battery inserted in slot 1 at 3/13/2024, 2:16:55 PM"
+  },
+  {
+    "timestamp": 1710321480561,
+    "message": "Battery inserted in slot 2 at 3/13/2024, 2:18:00 PM"
+  },
+  {
+    "timestamp": 1710323981963,
+    "message": "Battery removed from slot 2 at 3/13/2024, 2:59:41 PM"
+  },
+  {
+    "timestamp": 1710327086115,
+    "message": "Battery inserted in slot 2 at 3/13/2024, 3:51:26 PM"
+  },
+  {
+    "timestamp": 1710327239169,
+    "message": "Battery removed from slot 1 at 3/13/2024, 3:53:59 PM"
+  },
+  {
+    "timestamp": 1710402820987,
+    "message": "Battery removed from slot 2 at 3/14/2024, 12:53:40 PM"
+  },
+  {
+    "timestamp": 1710402870992,
+    "message": "Battery inserted in slot 2 at 3/14/2024, 12:54:30 PM"
+  },
+  {
+    "timestamp": 1710402870998,
+    "message": "Battery removed from slot 3 at 3/14/2024, 12:54:30 PM"
+  },
+  {
+    "timestamp": 1710404012004,
+    "message": "Battery removed from slot 8 at 3/14/2024, 1:13:32 PM"
+  },
+  {
+    "timestamp": 1710404037008,
+    "message": "Battery inserted in slot 8 at 3/14/2024, 1:13:57 PM"
+  },
+  {
+    "timestamp": 1710404052002,
+    "message": "Battery removed from slot 4 at 3/14/2024, 1:14:12 PM"
   }
 ]

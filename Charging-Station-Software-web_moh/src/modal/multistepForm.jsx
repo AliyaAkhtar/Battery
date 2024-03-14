@@ -117,7 +117,10 @@ const MultiStepForm = ({ open, handleClose }) => {
         password: "",
         admin_password: "",
       }));
-    }, 180000);
+      // setAccessTimeoutMessage("There was no user interaction for an extended period. You have been redirected to the home page.");
+      navigate("/home"); 
+      swal("Error", "There was no user interaction for an extended period. You have been redirected to the home page.", "error");
+    }, 120000);
   };
 
   // Reset the timeout whenever there is user activity
@@ -544,7 +547,7 @@ const MultiStepForm = ({ open, handleClose }) => {
   return (
     <ThemeProvider theme={theme}>
       <Dialog open={open} onClose={() => { }} fullWidth maxWidth="md">
-        <DialogContent >
+        <DialogContent style={{backgroundColor: theme.palette.mode === 'dark' ? '#242424' : '#ffffff'}}>
           <div style={{ marginBottom: "16px" }}>
             <Stepper activeStep={activeStep}>
               {steps.map((label) => (
@@ -560,7 +563,6 @@ const MultiStepForm = ({ open, handleClose }) => {
               marginLeft: "10%",
               marginRight: "10%",
               marginTop: "16px",
-              backgroundColor: theme.palette.mode === 'dark' ? '#383838' : '#ffffff',
             }}
           >
             {stepContent[activeStep]}

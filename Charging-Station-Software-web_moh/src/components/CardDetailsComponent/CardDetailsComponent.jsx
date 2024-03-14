@@ -9,9 +9,12 @@ import {
 import Lottie from "lottie-react";
 import Slider from "react-slick";
 import GenerateQRCode from "./generateQRCode.jsx";
+import url from "../../services/url.js";
+import { APis } from "../../services";
 import animationDataCard from "../../assets/card.json";
 import qrCodeAnimation from "../../assets/transitionFromCardToBarcode.json";
 import moveLeftAnimation from "../../assets/moveleft.json";
+import axios from "axios";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./CardDetailsComponent.css";
@@ -34,6 +37,41 @@ function CardDetails({
     const formattedInput = value.replace(/\D/g, "");
     const trimmedValue = formattedInput.slice(0, 4);
     return trimmedValue;
+  };
+
+  const fetchYourApi = () => {
+    // Define the payload
+    const payload = {
+      qrcode: "Qw3r5a"
+    };
+  
+    // Define the options for the fetch request
+    const options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(payload)
+    };
+   
+    // Make the fetch request
+    fetch('https://c5d8-111-68-110-251.ngrok-free.app/api/swap-card/searchQRCode', options)
+      .then(response => {
+        // Check if the response is successful
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        // Parse the JSON response
+        return response.json();
+      })
+      .then(data => {
+        // Log the response data
+        console.log('Response:', data);
+      })
+      .catch(error => {
+        // Log any errors
+        console.error('Error:', error);
+      });
   };
 
   const [id, setId] = useState(localStorage.getItem("Y_id"));
@@ -102,7 +140,12 @@ function CardDetails({
             <div className="slider-container">
               <h2 style={{ fontSize: "32px", margin: "10%" }}>AIM Cards</h2>
               {showMessage && (
-                <div className="fade-message">
+                <div className="fade-message"
+                style={{
+                  height: '100px',
+                  left: '10rem',
+                  top: '-3rem',
+                }}>
                   <Lottie
                     animationData={moveLeftAnimation}
                     height={300}
@@ -110,7 +153,7 @@ function CardDetails({
                     loop={true}
                   />
                 </div>
-              )}
+               )} 
 
               <div style={{ color: "#15A3C7", margin: "10%" }}></div>
               <p style={{ fontSize: "18px", margin: "10%" }}>
@@ -207,7 +250,7 @@ function CardDetails({
     <div key={"barcode"}>
       <Grid container className="cardUI">
         {/* Left */}
-        <Grid item xs={12} md={6}>
+        <Grid item xs={12} md={6} style={{ borderRight: "none" }}>
           <Paper
             elevation={3}
             style={{
@@ -217,6 +260,7 @@ function CardDetails({
               alignItems: "center",
               justifyContent: "center",
               boxShadow: "none", // Remove the box shadow
+              
             }}
           >
             <div style={{ width: "200px", height: "200px" }}>
@@ -294,7 +338,15 @@ function CardDetails({
                 }}
               >
                 <GenerateQRCode size={100} />
+
+                {/* Display QR code error if any */}
+                {/* {qrCodeError && <p>{qrCodeError}</p>} */}
+
+                {/* Show a button to proceed if QR code is valid */}
+                {/* {qrCodeValid && <Button onClick={handleNext}>Next</Button>} */}
+
               </div>
+              
             </div>
           </Paper>
         </Grid>
@@ -312,6 +364,11 @@ function CardDetails({
       setCurrentSlide(index);
       const currentSlideKey = slides[index].key;
       console.log(`Current Slide Index: ${index}, Key: ${currentSlideKey}`);
+      // Check if the index of the dot is 1 (the second dot)
+    if (index === 1) {
+      // Make your API call here
+      fetchYourApi();
+    }
     },
   };
   

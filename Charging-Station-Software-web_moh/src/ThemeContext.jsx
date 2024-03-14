@@ -21,11 +21,22 @@ export const ThemeProvider = ({ children }) => {
     },
   });
 
-  const [theme, setTheme] = useState("light");
+  // const [theme, setTheme] = useState("light");
+
+  // const toggleTheme = () => {
+  //   setTheme(theme === "light" ? "dark" : "light");
+  // };
 
   const toggleTheme = () => {
-    setTheme(theme === "light" ? "dark" : "light");
+    const newTheme = theme === 'light' ? 'dark' : 'light';
+    setTheme(newTheme);
+    localStorage.setItem('theme', newTheme); // Store the theme preference
   };
+  
+  const [theme, setTheme] = useState(
+    localStorage.getItem('theme') || 'light'
+  );  
+  
 
   console.log("Current theme:", theme); // Log the current theme
 

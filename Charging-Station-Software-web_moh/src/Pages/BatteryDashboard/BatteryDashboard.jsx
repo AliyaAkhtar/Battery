@@ -52,7 +52,7 @@ function BatteryDashboard(startTour) {
           /> */}
         </div>
       </nav>
-      <div className="container" style={{ backgroundColor: theme.palette.mode === 'dark' ? "#383838" : "#ffffff" }}>
+      <div className="container" >
           <BatteryComponent />
         </div>
       </div>

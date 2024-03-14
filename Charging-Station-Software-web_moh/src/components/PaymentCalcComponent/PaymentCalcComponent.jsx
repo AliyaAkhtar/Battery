@@ -102,10 +102,14 @@ function PaymentCalc({ formData, e_Msg_3 }) {
                   Calculating Payment
                 </h2>
 
-                {showMessage && animationCompleted && (
-                  <div
+                {showMessage && animationCompleted && ( 
+                <div
                     className="fade-message"
-                  
+                    style={{
+                      height: '100px',
+                      left: '10rem',
+                      top: '-3rem',
+                    }}
                   >
                     <Lottie
                       animationData={moveLeftAnimation}
@@ -113,8 +117,8 @@ function PaymentCalc({ formData, e_Msg_3 }) {
                       width={0}
                       loop={true}
                     />
-                  </div>
-                )}
+                  </div> 
+                 )}
                 <div style={{ color: "#15A3C7", margin: "10%" }}></div>
                 {e_Msg_3 && ( // Conditionally render the error message
                   <Typography
@@ -169,7 +173,7 @@ function PaymentCalc({ formData, e_Msg_3 }) {
       </Grid>
     </div>,
     <div key={"online Transaction"}>
-      <Grid container className="paymentUI">
+      <Grid container className="paymentUI" >
         {/* Left */}
         <Grid item xs={12} md={5}>
           <Paper
@@ -186,8 +190,8 @@ function PaymentCalc({ formData, e_Msg_3 }) {
             <Lottie animationData={Paypal} height={300} width={300} />
           </Paper>
         </Grid>
-             {/* Right */}
-        <Grid item xs={12} sm={6} style={{ backgroundColor: "red"}}>
+        {/* Right */}
+        <Grid item xs={12} sm={6} >
           <Paper
             elevation={3}
             style={{
@@ -217,9 +221,9 @@ function PaymentCalc({ formData, e_Msg_3 }) {
                   fontWeight: "bold",
                 }}
               >
-              اپنی ذاتی معلومات درج کریں۔
+                اپنی ذاتی معلومات درج کریں۔
               </p>
-              <Grid container spacing={2} > 
+              <Grid container spacing={2} >
                 <Grid item xs={6} sm={6} style={{ textAlign: "right" }}>
                   <TextField
                     id="First Name"
@@ -283,9 +287,9 @@ function PaymentCalc({ formData, e_Msg_3 }) {
                 <div style={{ margin: "8% " }}>
                   <Button
                     variant="contained"
-                    style={{ borderRadius: "0",marginLeft: "30px" }}
-                    // onClick={handleGetStartedClick}
-                    // endIcon={<ElectricBoltIcon />}
+                    style={{ borderRadius: "0", marginLeft: "30px" }}
+                  // onClick={handleGetStartedClick}
+                  // endIcon={<ElectricBoltIcon />}
                   >
                     Proceed to payment
                   </Button>

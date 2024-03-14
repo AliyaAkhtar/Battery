@@ -16,6 +16,11 @@ const GenerateQRCode = () => {
     // Combine the constant value, formatted date, and random number
     const newQrText = `${constantValue}-${formattedDate}-${randomNumber}`;
     setQrText(newQrText);
+    console.log(qrText);
+
+     // Generate QR code when component mounts
+    //  GenerateQRCode();
+
   }, []); // Empty dependency array ensures the effect runs only once
 
   return (

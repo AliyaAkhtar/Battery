@@ -1,4 +1,4 @@
-const Route = {
+const Redirect = {
     route_1: "/",
     route_2: "/home",
     route_3: "/battery",
@@ -7,5 +7,5 @@ const Route = {
   
   };
   
-  export default Route;
+  export default Redirect;
   

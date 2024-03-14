@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import "./feedback.css";
 import { ThemeContext } from "../../../ThemeContext";
+import { ThemeProvider } from "@mui/material/styles";
 import Feedbackemoji from "../../../assets/feedback.json";
 import Happy from "../../../assets/happy.json";
 import Lottie from "lottie-react";
@@ -20,6 +21,7 @@ import Button from "@material-ui/core/Button";
 import Checkbox from "@material-ui/core/Checkbox";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import { handleClear } from "../../../components/localStorageUtils/localStorageUtils"; // Update the path based on the actual file location
+import { createTheme } from '@mui/material/styles';
 
 const Feedback = () => {
   const [isFeedback, setIsFeedback] = useState(true);
@@ -33,8 +35,29 @@ const Feedback = () => {
   const decrementCountdown = () => {
     setRedirectCountdown((prevCount) => (prevCount > 0 ? prevCount - 1 : 0));
   };
+  
+  // Define the theme colors
+  const lightTheme = createTheme({
+   palette: {
+     mode: 'light',
+   },
+  });
+  
+  const darkTheme = createTheme({
+   palette: {
+     mode: 'dark',
+   },
+  });
+  // const { theme } = useContext(ThemeContext);
 
-  const { darkMode } = useContext(ThemeContext);
+  const { theme } = useContext(ThemeContext);
+
+// Ensure the theme preference is retrieved from localStorage
+const storedTheme = localStorage.getItem('theme') || 'light';
+
+// Determine which theme to use based on the stored theme preference
+const selectedTheme = storedTheme === 'dark' ? darkTheme : lightTheme;
+
 
   useEffect(() => {
     const countdownInterval = setInterval(() => {
@@ -94,8 +117,9 @@ const Feedback = () => {
   };
 
   const originPage = () => (
-    <Dialog open={open} onClose={() => { }} fullWidth maxWidth="md" >
-        <DialogContent style={{ padding: '20px', overflowY: 'hidden' }}>
+    <ThemeProvider theme={theme}>
+      <Dialog open={open} onClose={() => { }} fullWidth maxWidth="md" >
+        <DialogContent style={{ padding: '20px', overflowY: 'hidden', backgroundColor: theme.palette.mode === 'dark' ? '#252525' : '#ffffff' }}>
           <div style={{
             textAlign: 'center'
           }}>
@@ -104,7 +128,7 @@ const Feedback = () => {
         Click here for Complaint
       </button> */}
 
-            <div className="emojis-container" >
+            <div className="emojis-container" style={{backgroundColor: theme.palette.mode === 'dark' ? '#252525' : '#ffffff' }}>
               <img src={Aimmotors} style={{ width: "200px", height: "200px" }}></img>
               <h1 style={{
                 marginTop: "5px",
@@ -129,7 +153,7 @@ const Feedback = () => {
               </h2>
               <h3>How was your overall experience?</h3>
 
-              <ul className="emoji-container" >
+              <ul className="emoji-container" style={{backgroundColor: theme.palette.mode === 'dark' ? '#252525' : '#ffffff' }}>
                 {animations.map((animation) => (
                   <li key={animation.id} className="list-container">
                     <button
@@ -137,7 +161,7 @@ const Feedback = () => {
                       onClick={() => onChangeResponse(animation)} // Pass the selected emoji to the function
                       className="button"
                     >
-                      <p style={{ color: "#000000" }}> {animation.label}</p>
+                      <p style={{ color: theme.palette.mode === 'dark' ? '#ffffff' : '#000000' }}> {animation.label}</p>
                       <Lottie
                         animationData={animation.animationData}
                         alt={animation.name}
@@ -153,6 +177,7 @@ const Feedback = () => {
           </div>
         </DialogContent>
       </Dialog>
+    </ThemeProvider>
   );
 
   const Complaint = () => {
@@ -292,11 +317,12 @@ const Feedback = () => {
   };
 
   const feedBackPage = () => (
-    <Dialog open={open} onClose={() => { }} fullWidth maxWidth="md">
-        <DialogContent style={{ padding: '20px', overflowX: 'hidden', overflowY: 'hidden' }}>
-          <div className="tq-container" >
+    <ThemeProvider theme={theme}>
+      <Dialog open={open} onClose={() => { }} fullWidth maxWidth="md">
+        <DialogContent style={{ padding: '20px', overflowX: 'hidden', overflowY: 'hidden', backgroundColor: theme.palette.mode === 'dark' ? '#252525' : '#ffffff' }}>
+          <div className="tq-container" style={{ backgroundColor: theme.palette.mode === 'dark' ? '#252525' : '#ffffff' }}>
             <img src={Aimmotors} style={{ width: "200px", height: "200px" }}></img>
-            <h1> AIM-motors</h1>
+            <h1 style={{ color: theme.palette.mode === 'dark' ? '#ffffff' : '#000000' }}> AIM-motors</h1>
             <Lottie
               animationData={Feedbackemoji}
               style={{ height: "153px", width: "250px" }}
@@ -304,14 +330,15 @@ const Feedback = () => {
             />
             <h1>{message_1}</h1>
             <p>{message_2}</p>
-            <p>Redirecting to Main Page in {redirectCountdown} seconds</p>
+            <p style={{ color: theme.palette.mode === 'dark' ? '#ffffff' : '#000000' }}>Redirecting to Main Page in {redirectCountdown} seconds</p>
           </div>
         </DialogContent>
       </Dialog>
+    </ThemeProvider>
   );
 
   return (
-    <div className="bg-container">
+    <div className="bg-container" style={{backgroundColor: theme.palette.mode === 'dark' ? '#252525' : '#ffffff'}}>
       <div className="sub-container">
         {loading ? (
           <Loader />
